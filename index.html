@@ -8,7 +8,9 @@
         h2 { color: #4af6c3; margin-top: 0; font-size: 20px; }
         button { background: #4af6c3; border: none; padding: 12px; border-radius: 5px; cursor: pointer; font-weight: bold; color: #121214; text-align: left; }
         button:hover { background: #3ce0b0; }
-        iframe { flex-grow: 1; border: none; background: white; }
+        iframe { flex-grow: 1; border: none; background: #121214; }
+        .home-text { padding: 40px; font-family: sans-serif; }
+        h1 { color: #4af6c3; }
     </style>
 </head>
 <body>
@@ -16,11 +18,21 @@
     <!-- Sidebar menu panel -->
     <div class="menu">
         <h2>Arcade Menu</h2>
+        <button onclick="location.reload()">🏠 Home Page</button>
         <button onclick="document.getElementById('game-screen').src='dino.html'">🦖 Play Dino Game</button>
     </div>
 
-    <!-- Main window showing the game -->
-    <iframe id="game-screen" src="dino.html"></iframe>
+    <!-- Main window window showing the home text first -->
+    <iframe id="game-screen" srcdoc="
+        <body style='background:#121214; color:white; font-family:sans-serif; padding:40px; text-align:center;'>
+            <h1 style='color:#4af6c3; font-size:32px;'>Welcome to Daisy Games!</h1>
+            <p style='color:#a0a0a5; font-size:18px;'>This is the main landing area for all my custom projects.</p>
+            <div style='background:#202024; padding:20px; border-radius:8px; max-width:500px; margin:40px auto; border:1px solid #29292e;'>
+                <h3>👈 Select a Project</h3>
+                <p>Use the menu panel on the left to swap between my games and tools instantly.</p>
+            </div>
+        </body>
+    "></iframe>
 
 </body>
 </html>
