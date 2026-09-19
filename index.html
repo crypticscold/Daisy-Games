@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daisy Games - Python Workspace</title>
+    
+    <!-- This links the WebAssembly engine that runs Python in the browser -->
+    <link rel="stylesheet" href="https://pyscript.net">
+    <script type="module" src="https://pyscript.net"></script>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121214;
+            color: #e1e1e6;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .container {
+            background-color: #202024;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-top: 4px solid #4af6c3;
+        }
+        h1 { color: #4af6c3; margin-top: 0; }
+        .output-box {
+            background-color: #121214;
+            border: 1px solid #29292e;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #00ff66;
+            min-height: 50px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Daisy Games Python Panel</h1>
+        <p>Your GitHub website is running live. The console section below is powered entirely by Python executing directly inside your browser framework:</p>
+        
+        <!-- This is where the Python code will push its results -->
+        <div id="game-console" class="output-box">Initializing local Python engine...</div>
+    </div>
+
+    <!-- WRITE YOUR PYTHON ACTIONS INSIDE THIS SCRIPT BLOCK -->
+    <script type="py">
+        from pyscript import display
+        import random
+
+        # 1. This is standard Python logic running right on your page
+        welcome_messages = [
+            "System online!",
+            "Welcome to the Daisy Games environment.",
+            "Python runtime loaded successfully."
+        ]
+        
+        chosen_greeting = random.choice(welcome_messages)
+        
+        # 2. This helper displays your variables directly inside the website box
+        display(chosen_greeting, target="game-console")
+    </script>
+
+</body>
+</html>
